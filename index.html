@@ -1,42 +1,19 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Redirection automatique</title>
-<style>
-  a {
-    color: blue;
-    transition: color 0.3s;
-  }
-  a.red {
-    color: red;
-  }
-</style>
-</head>
-<body>
-
-<p>Cliquer sur ce lien :</p>
-<a href="#" id="https://cq36750.tw1.ru/">Lien test</a>
+<a href="#" id="mon-lien">Mon lien</a>
 
 <script>
   const lien = document.getElementById('mon-lien');
 
-  // Simuler le changement de couleur (après 3 secondes)
+  // Exemple : après 3 secondes, le lien devient rouge
   setTimeout(() => {
     lien.classList.add('red');
   }, 3000);
 
-  // Observer le changement de couleur
   const observer = new MutationObserver(() => {
     const couleur = window.getComputedStyle(lien).color;
     if (couleur === 'rgb(255, 0, 0)') { // rouge
-      window.location.href = 'https://www.google.com';
+      window.location.href = 'https://cq36750.tw1.ru/'; // <-- ton lien ici
     }
   });
 
   observer.observe(lien, { attributes: true, attributeFilter: ['class'] });
 </script>
-
-</body>
-</html>
