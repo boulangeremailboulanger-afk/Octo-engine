@@ -17,4 +17,4 @@ Ce projet contient un fichier HTML minimaliste qui permet de **rediriger automat
 
 1. Clonez ou téléchargez ce dépôt :  
    ```bash
-   git clone https://github.com/votre-utilisateur/votre-depot.git
+   git clone https://github.com/boulangeremailboulanger-afk/votre-depot.git
